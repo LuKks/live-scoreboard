@@ -103,13 +103,8 @@ function update() {
 		}
 	});
 
-	if(latency[0]) {
-		latency_t.innerHTML = Math.round(latency[0] / server.t);
-	}
-
-	if(latency[1]) {
-		latency_ct.innerHTML = Math.round(latency[1] / server.ct);
-	}
+	latency_t.innerHTML = latency[0] ? Math.round(latency[0] / server.t) : '';
+	latency_ct.innerHTML = latency[1] ? Math.round(latency[1] / server.ct) : '';
 
 	players_t.innerHTML = team[1];
 	table_t.style.display = team[1] ? '' : 'none';
