@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Live Scoreboard</title>
+
+	<meta name="author" content="LuKks (https://amxmodx-es.com/LuKks)">
+	<meta name="description" content="Live Scoreboard AMXX">
+	<meta name="keywords" content="live,scoreboard,cs,1.6,score,board,online,amxx,plugin">
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=0.45, maximum-scale=1.0, user-scalable=yes">
+
+	<link rel="stylesheet" href="live_scoreboard.css?v=1.0.0">
+</head>
+
+<body>
+
+<div class="scoreboard">
+	<table class="table-default">
+		<tr>
+			<th class="left"></th>
+			<th class="vipdead"></th>
+			<th class="status"></th>
+			<th class="score">Score</th>
+			<th class="deaths">Deaths</th>
+			<th class="latency">Latency</th>
+		</tr>
+
+		<tr>
+			<th class="line" colspan="4"><hr></th>
+		</tr>
+	</table>
+		
+	<table class="table-t mt5" style="display: none;">
+		<tr>
+			<th class="left">Terrorists&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<data>?</data> player<data></data></th>
+			<th class="vipdead"></th>
+			<th class="status"></th>
+			<th class="score"><data>?</data></th>
+			<th class="deaths"></th>
+			<th class="latency"></th>
+		</tr>
+
+		<tr>
+			<th class="line" colspan="4"><hr></th>
+		</tr>
+
+		<tfoot><!--players t--></tfoot>
+	</table>
+		
+	<table class="table-ct mt5" style="display: none;">
+		<tr>
+			<th class="left">Counter-Terrorists&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<data>?</data> player<data></data></th>
+			<th class="vipdead"></th>
+			<th class="status"></th>
+			<th class="score"><data>?</data></th>
+			<th class="deaths"></th>
+			<th class="latency"></th>
+		</tr>
+
+		<tr>
+			<th class="line" colspan="4"><hr></th>
+		</tr>
+
+		<tfoot><!--players ct--></tfoot>
+	</table>
+
+	<table class="table-default mt5" style="display: none;">
+		<tr>
+			<th class="left">Spectators</th>
+		</tr>
+
+		<tr>
+			<th class="line"><hr></th>
+		</tr>
+
+		<tfoot class="table-sp"><!--players sp--></tfoot>
+	</table>
+</div>
+
+<script src="live_scoreboard.js?v=1.0.0"></script>
+
+</body>
+</html>
