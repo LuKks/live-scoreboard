@@ -1,0 +1,78 @@
+body, html {
+	height: 100%;
+	margin: 0;
+
+	font-family: sans-serif;
+  font-size: 11px;
+}
+
+body {
+	background-image: url('https://vgy.me/e6bkPU.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.scoreboard {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	min-height: 540px;
+	min-width: 660px;
+
+	border-color: rgba(92, 72, 13, 1.0);
+	border-width: 1px;
+	border-style: solid;
+
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.table-default, .table-t, .table-ct, .table-sp {
+	width: 94%;
+}
+
+.mt5 { margin-top: 5px; }
+
+.table-default tr th { color: #ebb821; }
+.table-default tr th hr { background-color: rgba(92, 72, 13, 1.0); }
+
+.table-t tr th { color: #ff3333; }
+.table-t tr th hr { background-color: #ff3333; }
+
+.table-ct tr th { color: lightskyblue; }
+.table-ct tr th hr { background-color: lightskyblue; }
+
+.table-sp tr th { color: #aec6ad; }
+
+.line {
+	position: absolute;
+	width: 100%;
+}
+
+.line hr {
+	border: none;
+	height: 1px;
+
+	margin-top: -2px;
+	margin-bottom: 0px;
+	margin-right: 7px;
+	margin-left: 1px;
+}
+
+.name { padding-left: 7px; }
+.vipdead { width: 4%; }
+.status { width: 6%; }
+.score { width: 8%; }
+.deaths { width: 10%; }
+.latency { width: 12%; }
+
+.name, .left { text-align: left; }
+.vipdead, .status, .score, .deaths, .latency { text-align: right; }
