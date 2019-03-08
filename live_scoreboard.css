@@ -37,6 +37,10 @@ body {
 	width: 95%;
 }
 
+input:focus {
+	outline: none;
+}
+
 .scoreboard {
 	position: absolute;
 	top: 50%;
