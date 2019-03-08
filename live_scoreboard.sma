@@ -21,14 +21,6 @@ new saytext;
 public plugin_init() {
 	register_plugin("Live Scoreboard", "1.0.0", "LuKks");
 
-	register_forward(FM_ClientDisconnect, "event_disconnect"); // client_disconnect() deprecated and client_disconnected() don't detect bot disconnect :/
-
-	register_clcmd("say", "clcmd_say");
-}
-
-public plugin_cfg() {
-	users = ArrayCreate();
-
 	listen = socket_create(SOCK_TYPE_TCP, 2);
 	
 	if(!listen) {
@@ -45,9 +37,13 @@ public plugin_cfg() {
 		return;
 	}
 
-	register_event("TeamScore", "event_teamscore", "a");
+	users = ArrayCreate();
 
 	saytext = get_user_msgid("SayText");
+
+	register_forward(FM_ClientDisconnect, "event_disconnect"); // client_disconnect() deprecated and client_disconnected() don't detect bot disconnect :/
+	register_event("TeamScore", "event_teamscore", "a");
+	register_clcmd("say", "clcmd_say");
 
 	set_task(1.0, "loop", 0, _, _, "b");
 }
