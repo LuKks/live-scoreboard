@@ -18,9 +18,27 @@ body {
 	-ms-user-select: none;
 }
 
+.clcmd_say {
+	position: fixed;
+	width: 100%;
+
+	top: 2px;
+	left: 7px;
+
+	color: #ffb41e;
+	font-size: 14px;
+}
+
+#input_say {
+	background-color: transparent;
+	color: transparent;
+	text-shadow: 0 0 0 #ffb41e;
+	border: none;
+	width: 95%;
+}
+
 .scoreboard {
 	position: absolute;
-	margin: 0;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -33,6 +51,20 @@ body {
 	border-style: solid;
 
 	background: rgba(0, 0, 0, 0.5);
+
+	z-index: 1;
+}
+
+.say {
+	position: fixed;
+	width: 100%;
+
+	bottom: 80px;
+	left: 12px;
+	
+	height: 80px;
+
+	font-size: 14px;
 }
 
 .table-default, .table-t, .table-ct, .table-sp {
@@ -41,16 +73,17 @@ body {
 
 .mt5 { margin-top: 5px; }
 
-.table-default tr th { color: #ebb821; }
+.table-default tr th, .def { color: #ffb41e; }
 .table-default tr th hr { background-color: rgba(92, 72, 13, 1.0); }
 
-.table-t tr th { color: #ff3333; }
+.table-t tr th, .t { color: #ff3333; }
 .table-t tr th hr { background-color: #ff3333; }
 
-.table-ct tr th { color: lightskyblue; }
+.table-ct tr th, .ct { color: lightskyblue; }
 .table-ct tr th hr { background-color: lightskyblue; }
+.table-ct tr th { padding-right: 5px; }
 
-.table-sp tr th { color: #aec6ad; }
+.table-sp tr th, .sp { color: #ccc; }
 
 .line {
 	position: absolute;
@@ -68,11 +101,12 @@ body {
 }
 
 .name { padding-left: 7px; }
-.vipdead { width: 4%; }
 .status { width: 6%; }
+.action { width: 6%; }
 .score { width: 8%; }
 .deaths { width: 10%; }
 .latency { width: 12%; }
 
 .name, .left { text-align: left; }
-.vipdead, .status, .score, .deaths, .latency { text-align: right; }
+.status { text-align: left; }
+.action, .score, .deaths, .latency { text-align: right; }

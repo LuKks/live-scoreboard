@@ -12,17 +12,21 @@
  
 	<meta name="viewport" content="width=device-width, initial-scale=0.45, maximum-scale=1.0, user-scalable=yes">
 
-	<link rel="stylesheet" href="live_scoreboard.css?v=1.0.0">
+	<link rel="stylesheet" href="live_scoreboard.css">
 </head>
 
 <body>
+
+<div class="clcmd_say" style="display: none;">
+	<data>say:</data> <input id="input_say">
+</div>
 
 <div class="scoreboard">
 	<table class="table-default">
 		<tr>
 			<th class="left"></th>
-			<th class="vipdead"></th>
 			<th class="status"></th>
+			<th class="action"></th>
 			<th class="score">Score</th>
 			<th class="deaths">Deaths</th>
 			<th class="latency">Latency</th>
@@ -36,8 +40,8 @@
 	<table class="table-t mt5" style="display: none;">
 		<tr>
 			<th class="left">Terrorists&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<data>?</data> player<data></data></th>
-			<th class="vipdead"></th>
 			<th class="status"></th>
+			<th class="action"></th>
 			<th class="score"><data>?</data></th>
 			<th class="deaths"></th>
 			<th class="latency"></th>
@@ -53,8 +57,8 @@
 	<table class="table-ct mt5" style="display: none;">
 		<tr>
 			<th class="left">Counter-Terrorists&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;<data>?</data> player<data></data></th>
-			<th class="vipdead"></th>
 			<th class="status"></th>
+			<th class="action"></th>
 			<th class="score"><data>?</data></th>
 			<th class="deaths"></th>
 			<th class="latency"></th>
@@ -80,7 +84,9 @@
 	</table>
 </div>
 
-<script src="live_scoreboard.js?v=1.0.0"></script>
+<div class="say def"></div>
+
+<script src="live_scoreboard.js"></script>
 
 </body>
 </html>
