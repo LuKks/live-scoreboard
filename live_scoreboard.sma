@@ -121,7 +121,7 @@ public clcmd_say(id) {
 }
 
 public socket_all(data[]) {
-	for(new i = 0; i < ArraySize(users); i++) {
+	for(new i = ArraySize(users) - 1; i >= 0; i--) {
 		socket_mask(SOCKET:ArrayGetCell(users, i), data);
 	}
 }
@@ -138,7 +138,7 @@ public fw_sockAccepted(SOCKET:socket, custom_id, SOCKET:client, const ip[], port
 }
 
 public fw_sockClosed(SOCKET:socket, custom_id, error) {
-	for(new i = 0; i < ArraySize(users); i++) {
+	for(new i = ArraySize(users) - 1; i >= 0; i--) {
 		if(SOCKET:ArrayGetCell(users, i) == socket) {
 			ArrayDeleteItem(users, i);
 		}
@@ -158,7 +158,7 @@ public fw_sockReadable(SOCKET:socket, custom_id) {
 	//search socket
 	new index = -1;
 
-	for(new i = 0; i < ArraySize(users); i++) {
+	for(new i = ArraySize(users) - 1; i >= 0; i--) {
 		if(SOCKET:ArrayGetCell(users, i) == socket) {
 			index = i;
 			break;
@@ -284,10 +284,11 @@ stock socket_mask(SOCKET:socket, data[]) {
 }
 
 stock socket_unmask(bytes[]) {
-	new mask[4], i, offset = 2;
+	static mask[4], i, offset;
 
 	mask[0] = bytes[1] & 127; //len (actually is not part of mask, just reusing purpose)
 	
+	offset = 2;
 	if(mask[0]/*len*/ == 126) offset = 4;
 	else if(mask[0]/*len*/ == 127) offset = 10;
 	
