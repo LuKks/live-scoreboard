@@ -97,6 +97,8 @@ function init() {
 		//attemps = 0;
 
 		if(e.data === 'end') {
+			players = {};
+			
 			return hostname.innerHTML = 'Changing map';
 		}
 
