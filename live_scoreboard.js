@@ -56,7 +56,6 @@ window.addEventListener('keypress', function(e) {
 			if(ws.readyState === 1) {
 				input_say.value = '';
 				clcmd_say.style.display = '';
-				input_say.focus();
 			}
 		}
 	}
@@ -76,9 +75,16 @@ window.addEventListener('keypress', function(e) {
 				update_say();*/
 			}
 
+			input_say.blur();
 			clcmd_say.style.display = 'none';
 			input_say.value = '';
 		}
+	}
+});
+
+window.addEventListener('keyup', function(e) {
+	if(e.key === 'y' || e.which === 121 || e.charCode === 121) {
+		input_say.focus();
 	}
 });
 
