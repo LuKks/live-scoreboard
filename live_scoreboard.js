@@ -54,6 +54,7 @@ window.addEventListener('keypress', function(e) {
 			console.log('open say');
 
 			if(ws.readyState === 1) {
+				input_say.value = '';
 				clcmd_say.style.display = '';
 				input_say.focus();
 			}
@@ -98,7 +99,7 @@ function init() {
 
 		if(e.data === 'end') {
 			players = {};
-			
+
 			return hostname.innerHTML = 'Changing map';
 		}
 
