@@ -21,6 +21,8 @@ new saytext;
 public plugin_init() {
 	register_plugin("Live Scoreboard", "1.0.0", "LuKks");
 
+	users = ArrayCreate();
+
 	listen = socket_create(SOCK_TYPE_TCP, 2);
 	
 	if(!listen) {
@@ -36,8 +38,6 @@ public plugin_init() {
 		log_to_file("live_scoreboard.log", "[err] failed to bind");
 		return;
 	}
-
-	users = ArrayCreate();
 
 	saytext = get_user_msgid("SayText");
 
